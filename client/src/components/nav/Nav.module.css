@@ -1,0 +1,73 @@
+.navConteiner{
+    width: 100%;
+    /* background-color: blue ; */
+    height: 30px;
+    border-radius:10px;
+    padding: -1px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: large;
+}
+.nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /* background-color: red; */
+    margin-top: 4px;
+}
+
+.title{
+    height: 25px;
+    width: 150px;
+    font-family:fantasy;
+    color:azure;
+    text-decoration: none;
+}
+
+.admin{
+    height: 25px;
+    width: 150px;
+    font-family:fantasy;
+    color:azure;
+    text-decoration: none;
+    
+}
+.fav{
+    height: 25px;
+    width: 150px;
+    font-family:fantasy;
+    color:azure;
+    text-decoration: none;
+}
+.log{
+    height: 25px;
+    width: 150px;
+    font-family:fantasy;
+    color:azure;
+    text-decoration: none;
+}
+
+.title:hover{
+
+   opacity: 0.5;
+   box-shadow: 0px 1px 15px rgba(239, 232, 232, 0.36);
+}
+.admin:hover{
+   opacity: 0.5;
+   box-shadow: 0px 1px 15px rgba(239, 232, 232, 0.36);
+}
+.fav:hover{
+   opacity: 0.5;
+   box-shadow: 0px 1px 15px rgba(239, 232, 232, 0.36);
+}
+.log:hover{
+   opacity: 0.5;
+   box-shadow: 0px 1px 15px rgba(239, 232, 232, 0.36);
+}
+
+.search{
+    display: flex;
+    justify-content: center;
+    /* background-color: red; */
+    width: fit-content;
+    width: 300px;
+}

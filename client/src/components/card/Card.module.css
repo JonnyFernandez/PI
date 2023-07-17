@@ -1,0 +1,110 @@
+.container {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;    
+    width: 260px;
+    height: 260px;
+    /* box-shadow: 0px 0px 10px rgba(230, 220, 220, 0.5);    */
+    /* background-color: rgba(255, 255, 255, 0.093); */
+    background-color:rgba(128, 128, 128, 0.388);
+    border-radius: .5rem;
+    margin-left: .7rem;
+   
+}
+
+
+.divImage{
+    width: 100%;
+    height: 00px;
+    display: flex;
+    justify-content: center;
+    margin-top: -275px;
+}
+
+.img{
+    height: 150px;
+    width: 250px; 
+    object-fit: cover;
+    border: .1rem solid black;
+    overflow: hidden;
+    transition: all ease-in-out 0.2s;
+    border-radius: .5rem;
+    margin-top: 3px;
+}
+    
+   
+ 
+    
+
+.img:hover{
+    transform: scale(1);
+   border: .1rem solid rgb(197, 188, 188);
+   border-radius: 0rem;
+}
+
+  
+    
+.nameCard{
+    width: 16rem;
+    font-size: 12px;
+    padding:.4em;
+    color: whitesmoke;
+    text-align: center;
+    margin-top: 3px;
+    /* position: absolute; */
+}
+ 
+.nameCard:hover{
+    /* font-size:12px; */
+    color: black;
+    border: qpx solid white;
+}
+    
+
+.footerRight{
+    display: flex;
+    justify-content: flex-end;
+    
+    /* background-color: red; */
+    
+    
+
+}    
+
+
+
+.classFavorite{
+  background-color: transparent;
+  border: none;
+  font-size: large;
+  float: right;
+ /* background-color: red; */
+ padding: 4px;
+}
+
+.classFavorite:hover{
+    cursor: pointer;
+    border: 1px solid white;
+    box-shadow: 0px 0px 15px rgba(228, 218, 218, 0.397);
+}
+
+.dietContainer{
+    margin-top: 5px;
+    display: flex;
+    justify-content: center;
+    font-size: small;
+    color: whitesmoke;
+   
+}
+
+.headerCard{
+    width: 100%;
+    height: fit-content;
+    border: 1px solid black
+};
+
+/* .footerRight{
+    background-color: red;
+    height: 10px;
+    width: 10px;
+    position: absolute;
+} */
+

@@ -1,0 +1,100 @@
+.home{
+    margin-top: -10px;
+    height: 620px;
+    /* background-image: url('../../../image/fondo1.jpg'); */
+    /* background-size: cover; */
+    background: linear-gradient(to top, rgba(30,35,38,.8), rgba(30,35,38,1)),
+    url('../../../image/humo1.jpg');
+    
+    background-size: cover;
+
+}
+
+
+
+.navContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-top: 10px;
+    padding:4px;
+    background:#f9f9f909;
+    border-radius:10px;
+    position: sticky;
+};
+    
+  
+
+.paginate{
+    display: flex;
+    flex-direction: row;
+    background-color: red;
+}
+
+.cardContainer{    
+   display: flex;
+   justify-content: flex-end;
+   /* height: 700px;
+   overflow-x: scroll; */
+   /* aca tengo el Scroll vertical */
+   /* background-color: rebeccapurple; */
+
+}
+
+.box{
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem;
+    box-shadow: 0 0 1rem #00000025 inset;
+    border-radius:.375rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    height: 450px;
+    overflow-x: scroll;
+}
+
+.divRT{
+    padding: 1rem;
+    width: 300px;
+    height: 410px;
+    /* background-color: red; */
+    margin-top: 10px;
+}
+
+
+.divRT2 {
+    width: 280px;
+    height: 400px;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-image: url('../../../image/sarten.jpg');
+    animation: changeBg 50s infinite;
+    /* overflow: hidden; */
+    /* opacity: 0.8; */
+    background-size: cover;
+    
+};
+
+ 
+
+.filtros{
+    height: 100px;
+    width: 100px;
+    /* background-color: red; */
+}
+
+.filter1{
+    margin-top: 1rem;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.553);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.filter1:hover{
+    box-shadow: 0px 1px 10px rgba(239, 232, 232, 0.36); 
+    color: antiquewhite;
+   
+}
+
+  
