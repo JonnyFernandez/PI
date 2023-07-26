@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useState } from "react";
 import { getDetail, getAll,} from "../../../redux/actions";
 import d from './Detail.module.css'
+import { NavLink } from "react-router-dom";
 import Paginado from "../../paginate/Paginate";
 import Card from "../../card/Card";
 import Nav from "../../nav/Nav";
@@ -48,7 +49,8 @@ const Detail = () => {
     return (
         <div className={d.detailContainer} >
             <div className={d.navContainer}>
-                <Nav/>
+                <NavLink to={'/home'} className={d.back} >Back to Home</NavLink>
+                {/* <Nav/> */}
             </div>
 
             <div className={d.header}>
@@ -102,7 +104,7 @@ const Detail = () => {
             </div>
        
           
-           <div className={d.title2}>
+           {/* <div className={d.title2}>
             <h1 className={d.w}>More Recipes</h1>
            </div>
             
@@ -126,54 +128,9 @@ const Detail = () => {
                         })
                     }
                 </article>
-           </div>
-
- 
-
-                              
-
-           
-
-      
-       
-        {/* <div className={d.lastDiv} > 
-            <h2>More Recipes</h2>
-        </div> */}
-             
-             
-             
-             
-              {/* <div className={d.conteinerPaginate}>
-
-                <div className={d.paginate}>
-                    <Paginado recipePerPage={recipePerPage} foods={foods.length} paginado={paginado} />
-                </div>
-              </div> */}
+           </div> */}
 
 
-
-
-
-        {/* <div className={d.paginateDetail} >
-
-            
-            <article className={d.cardContainer}>
-                    {
-                        currentRecipe && currentRecipe?.map(item => {
-                            return (
-                                <div key={item.id}  >
-                                    <Card
-                                        id={item.id}
-                                        name={item.name}
-                                        image={item.image}
-                                        diets={item.diets}
-                                    />
-                                </div>
-                            )
-                        })
-                    }
-                </article>
-        </div> */}
 
      </div>
             

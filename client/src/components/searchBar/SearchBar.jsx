@@ -4,7 +4,7 @@ import { getRecipeByName } from '../../redux/actions'
 // import { useNavigate } from "react-router-dom"
 
 
-const SearchBar = () => {
+const SearchBar = ({current}) => {
 
     // const navigate = useNavigate()   
 
@@ -18,10 +18,10 @@ const SearchBar = () => {
     }
 
     const handleSubmit = (e) => {
-        e.preventDefault()
+        // e.preventDefault()
         dispatch(getRecipeByName(name))
         setName('')
-        // navigate('/home')
+        current()
 
     }
 

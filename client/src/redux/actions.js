@@ -39,21 +39,21 @@ export const getDetail = (payload) => {
 export const getRecipeByName = (name) => {
     return async function (dispatch) {
         try {
-           
-            const getRecipe = await axios(`http://localhost:3001/recipes?name=${name}`)
-            
 
-            if(getRecipe.data.length === 21){
+            const getRecipe = await axios(`http://localhost:3001/recipes?name=${name}`)
+
+
+            if (getRecipe.data.length === 21) {
                 return alert("No recipe found")
-            }else{
-                
+            } else {
+
                 dispatch({ type: GET_BY_NAME, payload: getRecipe.data })
             }
 
 
-            
-            
-      
+
+
+
         } catch (error) {
             console.log(error.message);
 
@@ -61,8 +61,8 @@ export const getRecipeByName = (name) => {
     }
 }
 
-export const moreDetail=(payload)=>{
-    return{type: MORE_DETAIL, payload:payload}
+export const moreDetail = (payload) => {
+    return { type: MORE_DETAIL, payload: payload }
 }
 
 export const addFav = (payload) => {
@@ -75,7 +75,11 @@ export const removeFav = (payload) => {
 
 export const createRecipe = (payload) => {
     return async function (dispatch) {
-        await axios.post("http://localhost:3001/recipes", payload)
+        try {
+            await axios.post("http://localhost:3001/recipes", payload)
+        } catch (error) {
+            console.log(error);            
+        }
 
     }
 };

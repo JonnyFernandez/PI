@@ -27,15 +27,16 @@ const Admin = () => {
         <div className={c.admin}>
              
               <div className={c.navContainer}>
-                <Nav />
+                {/* <Nav /> */}
               </div>
 
 
 
             
            <div className={c.header}>
+          
+           <NavLink className={c.create} to={'/home'}> Home </NavLink>
 
-           <div className={c.createA}>Admin</div>
 
           <div className={c.divCrud} >
 

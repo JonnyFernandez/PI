@@ -25,10 +25,13 @@ const Favorite = () => {
             <div className={f.favContainer}>
 
                 <div className={f.navContainer}>
-                    <Nav />
+                   
+                      {/* <Nav /> */}
                 </div>
 
                 <div className={f.subDiv} >
+               
+                <NavLink className={f.back}  to={'/home'}> Home </NavLink>
 
                     <h1 className={f.title} >Favorites</h1>
                     

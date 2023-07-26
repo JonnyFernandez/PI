@@ -1,6 +1,6 @@
 import {
     GET_ALL, GET_DIETS, FILTER_DIET, ORDER_AZ, ORDER_BY_DB_API, FILTER_SCORE,
-    GET_BY_ID, GET_BY_NAME, MORE_DETAIL, ADD_FAV,REMOVE_FAV, REMOVE
+    GET_BY_ID, GET_BY_NAME, MORE_DETAIL, ADD_FAV, REMOVE_FAV, REMOVE
 } from "./actionType";
 
 const initialState = {
@@ -8,7 +8,7 @@ const initialState = {
     backup: [],
     diets: [],
     detail: {},
-    moreDetails: [],
+    relativeDetails: [],
     favList: []
 }
 
@@ -97,29 +97,31 @@ const reducer = (state = initialState, action) => {
                 ...state,
                 foods: action.payload
             };
-        case MORE_DETAIL:
-            // let detailx = state.backup
-            // let aux3 = detailx.filter(item => item.diets === action.payload)
-            // let aux2 = detailx.filter(item=> item.diets.name === action.payload)
 
-            // let aux4 = aux3.concat(aux2)
+        // case MORE_DETAIL:
+        //     // const copi = state.backup
+        //     // let detailx = state.detail
+        //     let relative = action.payload < 7 ? state.detail.diets.map(item => item) : state.detail.diets.map(item => item.name)
 
-            return {
-                ...state,
-                
-            }
+        //     let aux3 = state.backup.filter(item => item.diets.includes(relative))
+
+        //     return {
+        //         ...state,
+        //         relativeDetails: aux3
+        //     }
+
         case ADD_FAV:
             return {
                 ...state,
                 favList: [...state.favList, action.payload],
             }
         case REMOVE_FAV:
-            const favFilter = state.favList.filter(item=> item.id !== action.payload)  
-            return{
+            const favFilter = state.favList.filter(item => item.id !== action.payload)
+            return {
                 ...state,
                 favList: favFilter
-            }  
-         
+            }
+
 
         default:
             return {

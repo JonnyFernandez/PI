@@ -62,12 +62,16 @@ const Home = () => {
         setCurrentPage(1)
     }
 
+    const current=()=>{
+        setCurrentPage(1)
+    }
+
 
     return (
         <div className='home'>
 
             <div className='navContainer'>
-                <Nav handleRefresh={handleRefresh} />
+                <Nav handleRefresh={handleRefresh} current={current} />
             </div>
 
             <div className='body' >

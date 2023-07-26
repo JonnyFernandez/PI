@@ -35,15 +35,39 @@ const CreateForm = () => {
     console.log(errors);
 
     const handleSelect = (e) => {
-        
+        const newDiet = e.target.value;
+        if (input.diets.includes(newDiet)) {
+          alert("Ya has seleccionado esta dieta");
+          return;
+        }
+        if(input.diets.length===3){
+            alert('solo puedes agregar 3 dietas')
+            return
+        }
         
         setInput({
             ...input,
             diets: [...input.diets, e.target.value]
         });
-
+        e.target.value = "";
 
     };
+
+
+    /*
+    const handleSelect = (e) => {
+        const newTemp = e.target.value;
+        if (input.temperaments.includes(newTemp)) {
+          alert("Ya has seleccionado este temperamento");
+          return;
+        }
+        setInput({
+          ...input,
+          temperaments: [...input.temperaments, newTemp],
+        });
+        e.target.value = "";
+      };
+    */ 
 
     const handleChange = (e) => {
         let property = e.target.name;
@@ -78,7 +102,7 @@ const CreateForm = () => {
             });
 
             alert('Recipe Created🔥')
-            navigate('/home')
+            // navigate('/home')
 
         } else {
             return alert("Please fill all required fields")
@@ -92,12 +116,13 @@ const CreateForm = () => {
         <div className={f.formContainer} >
 
             <div className={f.navForm} >
-                <NavLink className={f.back} to={'/home'} >Home</NavLink>
+                <NavLink className={f.back} to={'/admin'} >Back</NavLink>
+                <div className={f.divTitle}>Create Recipe</div>
             </div>
 
             <div className={f.subDiv}>
 
-                <div className={f.divTitle}>Create Recipe</div>
+                
             </div>
 
 
@@ -106,33 +131,33 @@ const CreateForm = () => {
             <div className={f.conteiner} >
 
                 <form onSubmit={handleSubmit} className={f.form} >
-
-                    {/* <label htmlFor="name">Name: </label> */}
+                  
+                    <label htmlFor="name" className={f.labels}>Name: </label>
                     <input className={f.inputs} type="text" placeholder="Nombre..." name="name" value={input.name} onChange={handleChange} />
 
                     <br />
 
-                    {/* <label htmlFor="image">Image: </label> */}
+                    <label htmlFor="image" className={f.labels}>Image: </label>
                     <textarea className={f.inputs} type="text" placeholder="image..." name="image" value={input.image}
                         onChange={handleChange}
                     />
 
                     <br />
 
-                    {/* <label htmlFor="summary">Summary: </label> */}
+                    <label htmlFor="summary" className={f.labels}>Summary: </label>
                     <textarea className={f.inputs} type="text" placeholder="summary..." name="summary" value={input.summary}
                         onChange={handleChange}
                     />
 
                     <br />
 
-                    {/* <label htmlFor="healthScore">healthScore: </label> */}
-                    <input className={f.inputsR} type="range" name="healthScore" placeholder="1" value={input.healthScore} onChange={handleChange} />
-                    {/* { <p> {input.healthScore} </p> } */}
+                    <label htmlFor="healthScore" className={f.labels}>healthScore: </label>
+                    <input className={f.inputsR} type="number" min={1} name="healthScore" placeholder="1" value={input.healthScore} onChange={handleChange} />
+                    {/* { <p className={f.text} > {input.healthScore}% Saludable </p> } */}
 
                     {/* <br /> */}
 
-                    {/* <label htmlFor="steps">steps: </label> */}
+                    <label htmlFor="steps" className={f.labels}>steps: </label>
                     <textarea className={f.inputs} type="text" placeholder="steps..." name="steps" value={input.steps}
                         onChange={handleChange}
                     />
@@ -140,7 +165,7 @@ const CreateForm = () => {
                     <br />
 
 
-                    {/* <label htmlFor="diets">Diets: </label> */}
+                    <label htmlFor="diets" className={f.labels}>Diets: </label>
                     <select className={f.inputs} onChange={handleSelect} >
                         {
                             Diets.map((item, index) => (
@@ -152,35 +177,52 @@ const CreateForm = () => {
 
                     <div className={f.outputDiet} >
 
-                        {
-                            input.diets.map((el, index) =>
-                                <div >
-                                    <p className={f.text} key={index} >{el} <button className={f.botonX} onClick={() => { handleDelete(el) }} > x </button> </p>
-                                </div>
-                            )
-                        }
+                       
                     </div>
 
-                    <br />
+                    <div className={f.buttonContainer} >
                     <button className={f.boton} type="submit">Create</button>
+                    </div>
+
+
 
                 </form>
 
                 <div className={f.form1} >
+                    <div className={f.instructions}>
                   {
                         errors?
                       <div className="errorContainer" >
                         <h2 className={f.text}><b>Instructions:</b></h2>
+                        {/* {!input.name && <p className={f.text} >nombre</p>} */}
                         {errors.name && <p className={f.text} >{errors.name}</p>}
                         {errors.image && <p className={f.text}>{errors.image}</p>}
+                        {/* {!input.image && <p className={f.text}>agregar imagen</p>} */}
                         {errors.summary && <p className={f.text}>{errors.summary}</p>}
+                        {/* {!input.summary && <p className={f.text}>resumen</p>} */}
                         {errors.healthScore && <p className={f.text}>{errors.healthScore}</p>}
+                        {/* {!input.healthScore && <p className={f.text}>procentaje salidable</p>} */}
                         {errors.steps && <p className={f.text}>{errors.steps}</p>}
-                        {errors.diets && <p className={f.text}>{errors.diets}</p>}
+                        {/* {!input.steps && <p className={f.text}>paso a paso</p>} */}
+                        {/* {!input.diets.length && <p className={f.text}>Add one or more diets</p>} */}
                     </div>
-                    : ''
+                    : 'hola'
 
                 }
+                </div>
+                <div className={f.dietDivs}>
+                    <h4 className={f.text}>Added allowances</h4>
+                {
+                            input.diets.map((el, index) =>
+                                <div >
+                                    <p className={f.textD} key={index} >{el+" "} <button className={f.botonX} onClick={() => { handleDelete(el) }} > x </button> </p>
+                                </div>
+                            )
+                        }
+                </div>
+               
+
+                    
                 </div>
 
             </div>

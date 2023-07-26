@@ -5,7 +5,7 @@ import n from './Nav.module.css'
 
 
 
-const Nav = ({handleRefresh}) => {
+const Nav = ({handleRefresh, current}) => {
 
     return (
         <div className={n.navConteiner}>
@@ -23,7 +23,7 @@ const Nav = ({handleRefresh}) => {
 
                 <div className={n.search} >
                     
-                    <SearchBar />
+                    <SearchBar current={current} />
 
                 </div>
 
