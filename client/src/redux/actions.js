@@ -77,6 +77,7 @@ export const createRecipe = (payload) => {
     return async function (dispatch) {
         try {
             await axios.post("http://localhost:3001/recipes", payload)
+            alert('Recipe Created🔥')
         } catch (error) {
             console.log(error);            
         }

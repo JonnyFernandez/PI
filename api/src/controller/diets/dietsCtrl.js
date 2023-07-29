@@ -11,7 +11,7 @@ const allDiets = async() => {
      diets.map(item => { 
         for (let i = 0; i < item.length; i++)  
         arr.push(item[i])
-    })
+    });
    
     arr.forEach(item => {
         Diets.findOrCreate({ where: { name: item } })

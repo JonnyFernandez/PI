@@ -101,7 +101,7 @@ const CreateForm = () => {
                 diets: [],
             });
 
-            alert('Recipe Created🔥')
+            
             // navigate('/home')
 
         } else {
